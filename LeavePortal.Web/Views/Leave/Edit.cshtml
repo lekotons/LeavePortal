@@ -1,0 +1,71 @@
+﻿@model LeavePortal.Web.Models.LeaveCreationViewModel
+
+@{
+    ViewBag.Title = "Edit leave";
+}
+
+<div class="page-header"><h2>Edit Leave</h2></div>
+
+<div class="container">
+    <form id="form" name="form" class="form-horizontal" method="Post" action='@Url.Action("Edit")' enctype="multipart/form-data">
+        @Html.Hidden("Balance", Model.LeaveBalanceInDays)
+        <div class="panel-warning">
+            <label id="error" name="error" class="text-danger"></label>
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FromDate, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.EditorFor(model => model.FromDate, new { htmlAttributes = new { @class = "form-control", @type = "date", @min = DateTime.Now.ToString("yyyy-MM-dd"), @value = Model.FromDate.ToString("yyyy-MM-dd") } })
+                @Html.ValidationMessageFor(model => model.FromDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ToDate, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.EditorFor(model => model.ToDate, new { htmlAttributes = new { @class = "form-control", @type = "date", @min = DateTime.Now.ToString("yyyy-MM-dd") } })
+                @Html.ValidationMessageFor(model => model.ToDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeaveRequestedInDays, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.EditorFor(model => model.LeaveRequestedInDays, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.LeaveRequestedInDays, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeaveBalanceInDays, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.EditorFor(model => model.LeaveBalanceInDays, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", } })
+                @Html.ValidationMessageFor(model => model.LeaveBalanceInDays, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeaveTypeId, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.DropDownListFor(model => model.LeaveTypeId, Model.LeaveTypes, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LeaveTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.TextAreaFor(model => model.Comments, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LeaveTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="edit" name="edit" type="submit" disabled class="btn btn-default">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
+<script src="~/Scripts/jquery.noty.packaged.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/pages/createoredit.js"></script>

@@ -1,0 +1,12 @@
+﻿@(
+ Html.Kendo().DropDownList()
+          .Name("LeaveType")
+          .DataTextField("Text")
+          .DataValueField("Value")
+          .DataSource(dataSource =>
+          {
+              dataSource.Read(r => r.Action("GetLeaveTypes", "MasterData").Type(HttpVerbs.Post));
+          })
+          .HtmlAttributes(new { style = "width:300px" })
+          .ValuePrimitive(true)
+)

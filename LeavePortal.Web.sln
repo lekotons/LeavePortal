@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeavePortal.Orchestrations", "LeavePortal.Orchestrations\LeavePortal.Orchestrations.csproj", "{F24EBBDC-A5E4-4F6C-9663-52BA97CB47FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeavePortal.Orchestrations.Contracts", "LeavePortal.Orchestrations.Contracts\LeavePortal.Orchestrations.Contracts.csproj", "{27C52E9A-B524-4CD9-9649-6A47D5275E31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeavePortal.Adapters.Contracts", "LeavePortal.Adapters.Contracts\LeavePortal.Adapters.Contracts.csproj", "{27F4A436-3DF3-4308-89D4-5A347A5343D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeavePortal.Adapters", "LeavePortal.Adapters\LeavePortal.Adapters.csproj", "{846427D5-4157-4EEE-9C02-17DE9614F732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeavePortal.Commons", "LeavePortal.Commons\LeavePortal.Commons.csproj", "{3C9547B6-6153-4982-A1E6-08E640397F0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeavePortal.UI.Web", "LeavePortal.Web\LeavePortal.UI.Web.csproj", "{5DD96B1C-3BF0-4D67-85E7-D1227F4A67EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F24EBBDC-A5E4-4F6C-9663-52BA97CB47FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F24EBBDC-A5E4-4F6C-9663-52BA97CB47FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F24EBBDC-A5E4-4F6C-9663-52BA97CB47FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F24EBBDC-A5E4-4F6C-9663-52BA97CB47FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C52E9A-B524-4CD9-9649-6A47D5275E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C52E9A-B524-4CD9-9649-6A47D5275E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C52E9A-B524-4CD9-9649-6A47D5275E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C52E9A-B524-4CD9-9649-6A47D5275E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F4A436-3DF3-4308-89D4-5A347A5343D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F4A436-3DF3-4308-89D4-5A347A5343D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F4A436-3DF3-4308-89D4-5A347A5343D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F4A436-3DF3-4308-89D4-5A347A5343D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846427D5-4157-4EEE-9C02-17DE9614F732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846427D5-4157-4EEE-9C02-17DE9614F732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846427D5-4157-4EEE-9C02-17DE9614F732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846427D5-4157-4EEE-9C02-17DE9614F732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9547B6-6153-4982-A1E6-08E640397F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9547B6-6153-4982-A1E6-08E640397F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9547B6-6153-4982-A1E6-08E640397F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9547B6-6153-4982-A1E6-08E640397F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD96B1C-3BF0-4D67-85E7-D1227F4A67EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD96B1C-3BF0-4D67-85E7-D1227F4A67EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD96B1C-3BF0-4D67-85E7-D1227F4A67EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD96B1C-3BF0-4D67-85E7-D1227F4A67EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

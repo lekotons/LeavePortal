@@ -1,0 +1,121 @@
+﻿@model LeavePortal.Web.Models.AwaitingApprovalViewModel
+
+@{
+    ViewBag.Title = "Pending Leave";
+}
+
+@if (Model.Requests.Count() == 0)
+{
+    <div class="panel-warning"><h3>There are no pending leave requests.</h3></div>
+}
+else
+{
+    <div class="page-header"><h3>Leave Requests Awaiting Approval</h3></div>
+    <div class="panel-warning">
+        <label id="error" name="error" class="text-danger"></label>
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="panel panel-success">
+
+        <div class="panel-body">
+            <table class="table table-sm ">
+                <thead>
+                    <tr class="table-active">
+                        <th>Request ID</th>
+                        <th>Employee ID</th>
+                        <th>From </th>
+                        <th>To</th>
+                        <th>Requested leave in days</th>
+                        <th>Leave Balance</th>
+                        <th>Leave Type</th>
+                        <th>Comments</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model.Requests)
+                {
+                        <tr>
+                            <th scope="row">@item.RequestId</th>
+                            <td>@item.EmployeeId</td>
+                            <td>@item.FromDate.ToString("yyyy-MM-dd")</td>
+                            <td>@item.ToDate.ToString("yyyy-MM-dd")</td>
+                            <td>@item.RequestedLeaveInDays</td>
+                            <td>@item.LeaveBalanceInDays</td>
+                            <td>@item.LeaveType</td>
+                            <td>@item.Comments</td>
+                            <td>
+                                <button type="button" class="btn btn-success" onclick="approve(@item.RequestId, @item.EmployeeId)">Approve</button>
+                                <button type="button" class="btn btn-danger" onclick="decline(@item.RequestId,@item.EmployeeId)">Decline</button>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
+
+@if (Model.History != null)
+{
+    <div class="page-header"><h2>Leave History</h2></div>
+
+    <div class="panel panel-success">
+
+        <div class="panel-body">
+            <table class="table table-sm ">
+                <thead>
+                    <tr class="table-active">
+                        <th>Request ID</th>
+                        <th>Employee ID</th>
+                        <th>From </th>
+                        <th>To</th>
+                        <th>Requested leave in days</th>
+                        <th>Leave Balance</th>
+                        <th>Leave Type</th>
+                        <th>Leave Cancelled</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.History)
+                    {
+                        <tr>
+                            <th scope="row">@item.RequestId</th>
+                            <td>@item.EmployeeId</td>
+                            <td>@item.FromDate.ToString("yyyy-MM-dd")</td>
+                            <td>@item.ToDate.ToString("yyyy-MM-dd")</td>
+                            <td>@item.RequestedLeaveInDays</td>
+                            <td>@item.LeaveBalanceInDays</td>
+                            <td>@item.LeaveType</td>
+                            <td>@item.Cancelled</td>
+                            <td>@item.Comments</td>
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+
+
+<script>
+
+    function approve(id, employeeId) {
+        window.location.href = "/Leave/ApproveOrDeclineLeaveRequest?requestId=" + id + '&employeeId=' + employeeId + '&approved=true';
+    }
+
+    function decline(id, employeeId) {
+        window.location.href = "/Leave/ApproveOrDeclineLeaveRequest?requestId=" + id + '&employeeId=' + employeeId +'&approved=false';
+    }
+
+</script>
